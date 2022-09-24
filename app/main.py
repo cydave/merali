@@ -52,5 +52,4 @@ async def ratelimited(request: Request, response: Response):
 @app.get("/reset")
 async def reset(request: Request):
     logger.info("[pid:%d] Serving /reset", multiprocessing.current_process().pid)
-    print(limiter._in_memory_fallback_enabled)
     return PlainTextResponse("Rate limit reset.")
